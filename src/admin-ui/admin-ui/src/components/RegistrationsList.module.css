@@ -1,0 +1,199 @@
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--gray);
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.search {
+  flex: 1;
+  min-width: 220px;
+  padding: 11px 16px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--light-bg-2);
+  background: var(--white);
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--dark-text);
+  outline: none;
+  transition: var(--transition);
+}
+
+.search:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(39, 158, 255, 0.15);
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  background: var(--white);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.filterBtn {
+  border: none;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 9px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  color: var(--primary);
+}
+
+.filterBtnActive {
+  background: var(--gradient-primary);
+  color: var(--light-text);
+}
+
+.filterBtnActive:hover {
+  color: var(--light-text);
+}
+
+.tableWrap {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead th {
+  text-align: right;
+  padding: 16px 20px;
+  background: var(--light-bg);
+  color: var(--gray);
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--light-bg-2);
+}
+
+.table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--light-bg);
+  color: var(--dark-text);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background: var(--light-bg);
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--light-bg-2);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mutedCell {
+  color: var(--gray);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.approveBtn,
+.rejectBtn {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.approveBtn {
+  background: rgba(39, 158, 255, 0.12);
+  color: var(--primary);
+}
+
+.approveBtn:hover {
+  background: var(--primary);
+  color: var(--light-text);
+}
+
+.rejectBtn {
+  background: rgba(102, 0, 0, 0.08);
+  color: var(--danger);
+}
+
+.rejectBtn:hover {
+  background: var(--danger);
+  color: var(--light-text);
+}
+
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--gray);
+  white-space: normal;
+}

@@ -1,0 +1,330 @@
+.edit-profile-page {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background:
+            radial-gradient(circle at top right, #1d4ed840, transparent 30%),
+            radial-gradient(circle at bottom left, #7c3aed30, transparent 25%),
+            #0f172a;
+}
+
+.edit-profile-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.edit-profile-card {
+    position: relative;
+    background: #111827;
+    border-radius: 22px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, .05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+    overflow: hidden;
+}
+
+.edit-profile-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(59, 130, 246, .08);
+    border-radius: 50%;
+    top: -90px;
+    right: -90px;
+}
+
+/* Header */
+.edit-profile-header {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.edit-profile-header h2 {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+}
+
+.edit-profile-header i {
+    color: #60a5fa;
+}
+
+/* Error message */
+.edit-profile-error {
+    color: #f87171;
+    background: rgba(220, 38, 38, .1);
+    border: 1px solid rgba(220, 38, 38, .3);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Grid */
+.edit-profile-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Item */
+.edit-profile-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px;
+    background: #1a2234;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, .04);
+    transition: .25s;
+}
+
+.edit-profile-item:hover {
+    transform: translateY(-3px);
+    border-color: #3b82f6;
+}
+
+/* Icon */
+.edit-profile-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, .12);
+    color: #60a5fa;
+    border-radius: 14px;
+    font-size: 22px;
+}
+
+/* Content */
+.edit-profile-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-profile-content label {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Input */
+.edit-profile-content input {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px;
+    box-sizing: border-box;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: .25s;
+}
+
+.edit-profile-content input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, .15);
+}
+
+/* Back button */
+.edit-back-btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.edit-back-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Files */
+.edit-profile-file-card {
+    display: flex;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 18px;
+    background: #1a2234;
+    border: 1px solid rgba(255, 255, 255, .04);
+}
+
+.edit-profile-file-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.edit-profile-file-content label {
+    color: #94a3b8;
+}
+
+.edit-profile-file-content span {
+    color: #fff;
+    font-weight: 500;
+}
+
+.edit-profile-file-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Delete button */
+.delete-file-btn {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    background: #dc2626;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .25s;
+}
+
+.delete-file-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Upload button */
+.upload-file-btn {
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .25s;
+}
+
+.upload-file-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Cancel selected (not-yet-saved) file button */
+.cancel-file-btn {
+    border: 1px solid rgba(255, 255, 255, .15);
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #cbd5e1;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .25s;
+}
+
+.cancel-file-btn:hover {
+    border-color: #f87171;
+    color: #f87171;
+}
+
+/* Save changes button */
+.save-changes-btn {
+    grid-column: 1 / -1;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    cursor: pointer;
+    color: #fff;
+    background: #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: .25s;
+}
+
+.save-changes-btn:hover {
+    transform: translateY(-3px);
+}
+
+.save-changes-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+}
+@media (max-width: 1024px) {
+    .edit-profile-file-card{
+        gap: 0.4rem;
+    }
+}
+/* Tablet */
+@media (max-width: 900px) {
+    .edit-profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .edit-profile-page {
+        padding: 20px 12px;
+    }
+
+    .edit-profile-card {
+        padding: 20px;
+    }
+
+    .edit-profile-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edit-profile-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .edit-profile-header h2 {
+        font-size: 18px;
+    }
+}
+@media (max-width: 425px) {
+    .edit-profile-file-card{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 375px) {
+    .edit-profile-content input {
+        font-size: 14px;
+    }
+
+    .edit-back-btn {
+        width: 100%;
+    }
+
+}

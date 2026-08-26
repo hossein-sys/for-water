@@ -1,0 +1,231 @@
+.header-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.header-bg-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.video-container{
+    position: relative;
+    width: 100%;
+
+}
+
+.about-video-player{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    background: #000;
+    border-radius: inherit;
+}
+
+.video-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+}
+.video-overlay .clicked{
+    display: none;
+}
+
+.video-overlay i{
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.video-overlay h3{
+    margin: 5px 0;
+}
+
+.video-overlay p{
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* ------------------------------------------------------- */
+/* .sticky-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+    افکت شیشه‌ای
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+     خط ظریف پایین
+     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+     سایه خیلی نرم
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+
+     transition: all 0.3s ease;
+     } */
+
+
+
+
+#ip-info-div{
+    display: flex;
+    justify-content: center;
+}
+#registration-cta-div{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+#logo-sub{
+    margin-top: 15px;
+}
+
+.section-title-header-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#about{
+    padding-bottom: 2rem;
+}
+
+#problems{
+    display: flex;
+    width: 100%;
+    max-width: 100%;;
+    justify-content: center;
+    padding-top: 2rem;
+
+}
+#problemsContainer{
+    width: 100%;
+    max-width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.topic-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.topic-card-lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*#topicStakeholders{*/
+/*    padding-bottom: 3rem;*/
+/*}*/
+.fa-check{
+    padding-left: 10px  ;
+}
+#topics{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
+#topicsContainer{
+    width: 100%;
+    max-width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+#registration{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
+#challengesContainer{
+    width: 100%;
+    max-width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.registration_ul{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-around;
+}
+.registration_ul_custom{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.registration_card_hr{
+    border-top:  #f1f5f9;
+    margin-bottom: 2px;
+}
+.resistration_li_custom{
+    display: flex;
+    flex-flow: wrap;
+}
+#cta-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 12rem;
+}
+
+@media (max-width:576px){
+    #stickyNavbar{
+        width: 100%;
+        margin: 0;
+    }
+    #cta-buttons{
+        gap: 15px;
+    }
+}

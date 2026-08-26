@@ -1,0 +1,609 @@
+@font-face {
+    font-family: "Ordibehesht";
+    src:
+            url("../assets/fonts/Ordibehesht.TTF") format("truetype"),
+            url("../assets/fonts/Ordibehesht.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Vazir";
+    src:
+            url("../assets/fonts/vazirFont/vazirTtf/Vazir.ttf"),
+            url("../assets/fonts/vazirFont/vazirTtf/Vazir-Medium.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Doran", "Vazir", sans-serif;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ua-container {
+    position: relative;
+
+    min-height: 100dvh;
+
+    overflow: hidden;
+}
+
+.ua-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    min-height: 100dvh;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.ua-col {
+    width: 50%;
+}
+
+/* =========================
+   FLEX HELPERS
+========================= */
+
+.ua-align-items-center {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.ua-flex-col {
+    flex-direction: column;
+}
+
+.ua-pointer {
+    cursor: pointer;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.ua-form-wrapper {
+    width: 100%;
+    max-width: 28rem;
+    z-index: 20;
+
+    position: relative;
+}
+
+.ua-form {
+    width: 100%;
+
+    padding: 1rem;
+
+    background-color: var(--white);
+
+    border-radius: 1.5rem;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    transform: scale(0);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+            transform 0.5s ease-in-out,
+            opacity 0.5s ease-in-out;
+
+
+
+    z-index: 1;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.ua-input-group {
+    position: relative;
+    width: 100%;
+}
+
+.ua-input-group i {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: var(--gray-2);
+}
+
+.ua-input-group input {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    background-color: var(--gray-color);
+    border-radius: 0.5rem;
+    border: 0.125rem solid var(--white);
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 0.7rem;
+}
+
+.ua-input-group input:focus {
+    border-color: var(--primary-color);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.link{
+    width: 40%;
+    padding: 0.5rem 1rem !important;
+    text-decoration: none;
+}
+.ua-form button,.link {
+    width: 100%;
+
+    padding: 0.6rem 0;
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.5rem;
+
+    background: var(--dark-text);
+
+    color: var(--white);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.submitButton {
+    width: 100%;
+
+    padding: 0.6rem 0;
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.5rem;
+
+    background: var(--dark-text);
+
+    color: var(--white);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.submitButton:disabled{
+    opacity:0.6;
+    background: var(--dark-text);
+    cursor:not-allowed;
+}
+
+.ua-form button:hover,.link:hover {
+    opacity: 0.9;
+}
+.submitButton:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   TEXTS
+========================= */
+
+.ua-form p {
+    margin: 1rem 0;
+
+    font-size: 0.7rem;
+}
+
+.ua-forgot-password {
+    font-size: 0.9rem;
+}
+
+/* =========================
+   ACTIVE FORMS
+========================= */
+
+.ua-container.ua-sign-in .ua-form.ua-sign-in,
+.ua-container.ua-sign-up .ua-form.ua-sign-up {
+    transform: scale(1);
+    opacity: 1;
+
+    pointer-events: all;
+
+    z-index: 2;
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+
+.ua-content-row {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+.ua-text {
+    margin: 4rem;
+
+    color: var(--white);
+
+    position: relative;
+
+    z-index: 15;
+}
+
+.ua-text h2 {
+    margin: 2rem 0;
+
+    font-size: 3.5rem;
+    font-weight: 800;
+
+    transition: 1s ease-in-out;
+}
+
+.ua-text p {
+    font-weight: 600;
+
+    transition: 1s ease-in-out;
+
+}
+
+.ua-img img {
+    width: 30vw;
+
+    transition: 1s ease-in-out;
+
+}
+.ua-text.ua-sign-in,
+.ua-text.ua-sign-up,
+.ua-img.ua-sign-in,
+.ua-img.ua-sign-up {
+    position: absolute;
+
+    opacity: 0;
+
+    transition:
+            transform 1s ease,
+            opacity 0.5s ease;
+}
+/* =========================
+   INITIAL ANIMATION STATES
+========================= */
+
+.ua-text.ua-sign-in h2,
+.ua-text.ua-sign-in p,
+.ua-img.ua-sign-in img {
+    transform: translateX(-250%);
+}
+
+.ua-text.ua-sign-up h2,
+.ua-text.ua-sign-up p,
+.ua-img.ua-sign-up img {
+    transform: translateX(250%);
+}
+
+/* =========================
+   ACTIVE CONTENT
+========================= */
+.ua-container.ua-sign-in .ua-text.ua-sign-in,
+.ua-container.ua-sign-in .ua-img.ua-sign-in,
+.ua-container.ua-sign-up .ua-text.ua-sign-up,
+.ua-container.ua-sign-up .ua-img.ua-sign-up {
+    opacity: 1;
+}
+
+.ua-container.ua-sign-in .ua-text.ua-sign-in h2,
+.ua-container.ua-sign-in .ua-text.ua-sign-in p,
+.ua-container.ua-sign-in .ua-img.ua-sign-in img,
+.ua-container.ua-sign-up .ua-text.ua-sign-up h2,
+.ua-container.ua-sign-up .ua-text.ua-sign-up p,
+.ua-container.ua-sign-up .ua-img.ua-sign-up img {
+    transform: translateX(0);
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.ua-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 300vw;
+    min-height: 100dvh;
+
+    transform: translate(35%, 0);
+
+    background: linear-gradient(341deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);;
+
+    transition: 1s ease-in-out;
+
+    z-index: 1;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    border-bottom-right-radius: max(50vw, 50vh);
+    border-top-left-radius: max(50vw, 50vh);
+}
+
+.ua-container.ua-sign-in::before {
+    transform: translate(0, 0);
+
+    right: 50%;
+}
+
+.ua-container.ua-sign-up::before {
+    transform: translate(100%, 0);
+
+    right: 50%;
+}
+.ua-input-group i {
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+    .ua-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .ua-form-wrapper {
+        max-width: 24rem;
+    }
+
+    .ua-container::before {
+        width: 250vw;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+    .ua-text {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .ua-container {
+        min-height: 100dvh;
+    }
+
+    .ua-row {
+        height: 100dvh;
+
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .ua-container::before,
+    .ua-container.ua-sign-in::before,
+    .ua-container.ua-sign-up::before {
+
+        width: 100%;
+        height: 38vh;
+
+        top: 0;
+        right: 0;
+
+        transform: none;
+
+        border-radius: 0;
+
+        z-index: 0;
+    }
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    /* =========================
+   MOBILE CONTENT
+========================= */
+
+    .ua-content-row {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 35vh;
+
+        z-index: 5;
+    }
+
+    /* hide all */
+
+    .ua-sign-in-content,
+    .ua-sign-up-content {
+        display: none;
+
+        width: 100%;
+        height: 100%;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        padding-top: 4rem;
+    }
+
+    /* active */
+
+    .ua-container.ua-sign-in .ua-sign-in-content {
+        display: flex;
+    }
+
+    .ua-container.ua-sign-up .ua-sign-up-content {
+        display: flex;
+    }
+
+    /* text */
+
+    .ua-text {
+        width: 100%;
+
+        text-align: center;
+
+        color: var(--white);
+    }
+
+    .ua-text h2 {
+        margin: 0;
+
+        font-size: 2rem;
+
+        transform: none !important;
+    }
+
+    .ua-text p {
+        display: none;
+    }
+
+    /* =========================
+       FORM AREA
+    ========================= */
+
+    .ua-sign-in-col,
+    .ua-sign-up-col {
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+
+        padding: 2rem;
+
+        background-color: var(--white);
+
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+
+        transform: translateY(100%);
+
+        transition: 1s ease-in-out;
+
+        z-index: 10;
+    }
+
+    .ua-container.ua-sign-in .ua-col.ua-sign-in-col,
+    .ua-container.ua-sign-up .ua-col.ua-sign-up-col {
+        transform: translateY(0);
+    }
+
+    .ua-form-wrapper {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .ua-form {
+        padding: 1rem;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        background: transparent;
+    }
+
+    /* =========================
+       INPUTS
+    ========================= */
+
+    .ua-input-group input {
+        padding: 0.9rem 3rem;
+
+        font-size: 0.95rem;
+    }
+
+    .ua-form button {
+        padding: 0.8rem 0;
+
+        font-size: 1rem;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .ua-col {
+        padding: 1.2rem;
+    }
+
+    .ua-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .ua-input-group input {
+        font-size: 0.9rem;
+    }
+
+    .ua-form button {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================
+   FORM FOOTER TEXT & LINKS
+========================= */
+
+.ua-switch-text {
+    font-size: 0.9rem;
+}
+
+.ua-back-link {
+    width: 40%;
+}

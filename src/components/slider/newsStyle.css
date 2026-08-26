@@ -1,0 +1,1051 @@
+.news-page{
+    background: var(--light-bg);
+    padding-bottom: 5rem;
+}
+
+/* ================= HERO ================= */
+
+.news-hero {
+    position: relative;
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.news-overlay{
+    position:absolute;
+    inset:0;
+    background: rgba(0, 0, 0, 0.84);
+    opacity:.55;
+}
+
+.news-hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    text-align:center;
+}
+
+.news-category{
+    display:inline-block;
+    padding:.7rem 1.4rem;
+    border-radius:50px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    margin-bottom:1rem;
+}
+
+.news-hero h1{
+    font-size:3.5rem;
+    margin-bottom:1rem;
+}
+
+.news-hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:1.2rem;
+}
+
+.news-meta{
+    margin-top:2rem;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+}
+
+/* ================= INTRO ================= */
+
+.intro-card{
+    margin-top:-100px;
+    position:relative;
+    z-index:5;
+
+    background:white;
+    border-radius:24px;
+    padding:2.5rem;
+
+    box-shadow: var(--custom-shadow);
+}
+
+.intro-card p{
+    font-size:1.2rem;
+    line-height:2;
+    text-align:justify;
+}
+
+/* ================= STATS ================= */
+
+.stats-grid{
+    margin-top:4rem;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:white;
+    padding:2rem;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--custom-shadow);
+}
+
+.stat-card h3{
+    font-size:3rem;
+}
+
+.stat-card span{
+    display:block;
+    font-size:2rem;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+/* ================= CONTENT ================= */
+
+.article-content{
+    margin-top:5rem;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.article-card{
+    background:white;
+
+    padding:2rem;
+
+    border-radius:20px;
+
+    border-top:5px solid var(--primary);
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+}
+
+.article-card:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--custom-shadow);
+}
+
+.article-card h2{
+    margin-bottom:1rem;
+    color:var(--dark-text);
+}
+
+.article-card p{
+    line-height:2;
+    text-align:justify;
+}
+
+/* ================= QUOTE ================= */
+
+.quote-box{
+    margin-top:5rem;
+
+    background:var(--gradient-primary);
+
+    padding:4rem;
+
+    border-radius:30px;
+
+    color:white;
+
+    text-align:center;
+}
+
+.quote-box h3{
+    font-size:2rem;
+    line-height:1.8;
+}
+
+/* ================= CONCLUSION ================= */
+
+.conclusion-box{
+    margin-top:5rem;
+
+    text-align:center;
+
+    background:white;
+
+    padding:4rem;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+}
+
+.conclusion-box h2{
+    color:var(--dark-text);
+    margin-bottom:1rem;
+}
+
+.conclusion-box p{
+    max-width:800px;
+    margin:auto;
+    line-height:2;
+}
+
+.conclusion-box button{
+    margin-top:2rem;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    background:var(--gradient-accent);
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.conclusion-box button:hover{
+    transform:translateY(-4px);
+}
+/* ================= ARTICLE WRAPPER ================= */
+
+.article-wrapper {
+    max-width: 950px;
+    margin: 70px auto 0;
+}
+
+.article-reading {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 60px 75px;
+
+    box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.06);
+
+    position: relative;
+}
+
+
+/* نوار ظریف کنار مقاله */
+
+.article-reading::before {
+    content: "";
+    position: absolute;
+
+    right: 0;
+    top: 70px;
+    bottom: 70px;
+
+    width: 5px;
+
+    background: var(--gradient-primary);
+
+    border-radius: 10px 0 0 10px;
+}
+
+
+/* ================= SECTION ================= */
+
+.article-section {
+    position: relative;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(0, 150, 136, 0.08);
+
+    font-size: 23px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 1.65rem;
+
+    color: var(--dark-text);
+
+    line-height: 1.6;
+}
+
+
+/* ================= TEXT ================= */
+
+.section-text {
+    padding-right: 63px;
+}
+
+.section-text p {
+    font-size: 1.08rem;
+
+    line-height: 2.35;
+
+    color: #4c5560;
+
+    text-align: justify;
+
+    margin: 0 0 22px;
+}
+
+
+/* پاراگراف اول هر بخش */
+
+.section-text p:first-child::first-letter {
+    font-size: 2.7rem;
+
+    font-weight: 700;
+
+    float: right;
+
+    line-height: 1;
+
+    padding-left: 7px;
+
+    color: var(--primary);
+}
+
+
+/* ================= DIVIDER ================= */
+
+.section-divider-news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 55px 0;
+}
+
+.section-divider-news span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    opacity: .35;
+}
+
+.section-divider-news span:nth-child(2) {
+    width: 10px;
+    height: 10px;
+
+    opacity: .8;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro-card {
+    position: relative;
+
+    margin-top: -80px;
+
+    z-index: 5;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px 45px 35px 55px;
+
+    box-shadow:
+            0 20px 60px rgba(0, 0, 0, .07);
+}
+
+.intro-card p {
+    margin: 0;
+
+    font-size: 1.15rem;
+
+    line-height: 2.2;
+
+    color: #4b5563;
+
+    text-align: justify;
+}
+
+.intro-line {
+    position: absolute;
+
+    right: 0;
+    top: 25px;
+    bottom: 25px;
+
+    width: 5px;
+
+    background: var(--gradient-primary);
+
+    border-radius: 10px;
+}
+
+
+/* ================= STATS ================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.stat-card {
+    padding: 25px 15px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.8);
+
+    border: 1px solid rgba(0,0,0,.05);
+
+    border-radius: 20px;
+
+    transition: .35s;
+}
+
+.stat-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+            0 15px 40px rgba(0,0,0,.08);
+}
+
+.stat-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.stat-card span {
+    display: block;
+
+    font-size: 1.45rem;
+
+    font-weight: 800;
+
+    color: var(--primary);
+}
+
+.stat-card p {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+
+    font-size: .9rem;
+}
+
+
+/* ================= QUOTE ================= */
+
+.quote-box {
+    max-width: 900px;
+
+    margin: 70px auto;
+
+    padding: 45px 60px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: var(--gradient-primary);
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow:
+            0 20px 50px rgba(0,0,0,.12);
+}
+
+.quote-mark {
+    position: absolute;
+
+    top: -25px;
+    right: 30px;
+
+    font-size: 130px;
+
+    opacity: .12;
+
+    font-family: serif;
+}
+
+.quote-box p {
+    margin: 0;
+
+    font-size: 1.45rem;
+
+    line-height: 2;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ================= CONCLUSION ================= */
+
+.conclusion-box {
+    max-width: 950px;
+
+    margin: 70px auto;
+
+    padding: 50px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    box-shadow:
+            0 15px 50px rgba(0,0,0,.06);
+
+    text-align: center;
+
+    border-top: 4px solid var(--primary);
+}
+
+.conclusion-label {
+    display: inline-block;
+
+    padding: 6px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 150, 136, .08);
+
+    color: var(--primary);
+
+    font-size: .85rem;
+
+    margin-bottom: 15px;
+}
+
+.conclusion-box h2 {
+    margin-bottom: 20px;
+
+    color: var(--dark-text);
+
+    font-size: 1.8rem;
+}
+
+.conclusion-box p {
+    max-width: 800px;
+
+    margin: auto;
+
+    line-height: 2.3;
+
+    color: #4b5563;
+
+    text-align: justify;
+}
+
+/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE NEWS EXPERIENCE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ================= PAGE ================= */
+
+    .news-page {
+        overflow: hidden;
+        padding-bottom: 30px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .news-hero {
+        min-height: 570px;
+
+        display: flex;
+        align-items: flex-end;
+
+        background-position: center;
+        border-radius: 0 0 32px 32px;
+    }
+
+    .news-overlay {
+        background:
+                linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.05) 10%,
+                        rgba(0, 0, 0, 0.28) 40%,
+                        rgba(0, 0, 0, 0.85) 100%
+                );
+    }
+
+    .news-hero-content {
+        width: 100%;
+
+        padding: 0 5px 48px;
+
+        text-align: right;
+    }
+
+    .news-category {
+        display: inline-flex;
+
+        align-items: center;
+
+        padding: 7px 14px;
+
+        margin-bottom: 14px;
+
+        border-radius: 30px;
+
+        font-size: 12px;
+
+        background: rgba(255, 255, 255, 0.16);
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        backdrop-filter: blur(12px);
+    }
+
+    .news-hero h1 {
+        font-size: 1.8rem;
+
+        line-height: 1.65;
+
+        margin: 0 0 14px;
+
+        font-weight: 800;
+    }
+
+    .news-hero p {
+        font-size: 0.95rem;
+
+        line-height: 2;
+
+        margin: 0;
+
+        color: rgba(255, 255, 255, 0.88);
+    }
+
+    .news-meta {
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-top: 18px;
+    }
+
+    .news-meta span {
+        padding: 7px 11px;
+
+        border-radius: 20px;
+
+        font-size: 11px;
+
+        background: rgba(255, 255, 255, 0.13);
+
+        backdrop-filter: blur(10px);
+    }
+
+
+    /* ================= INTRO ================= */
+
+    .intro-card {
+        margin-top: -32px;
+
+        padding: 25px 22px 25px 27px;
+
+        border-radius: 22px;
+
+        box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    .intro-line {
+        top: 22px;
+        bottom: 22px;
+
+        width: 4px;
+    }
+
+    .intro-card p {
+        font-size: 0.98rem;
+
+        line-height: 2.15;
+
+        text-align: justify;
+
+        margin: 0;
+    }
+
+
+    /* ================= STATS ================= */
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 11px;
+
+        margin-top: 25px;
+    }
+
+    .stat-card {
+        min-height: 125px;
+
+        padding: 18px 10px;
+
+        border-radius: 18px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+    }
+
+    .stat-card:active {
+        transform: scale(0.97);
+    }
+
+    .stat-icon {
+        font-size: 25px;
+
+        margin-bottom: 7px;
+    }
+
+    .stat-card span {
+        font-size: 1.15rem;
+    }
+
+    .stat-card p {
+        font-size: 0.75rem;
+
+        margin-top: 4px;
+    }
+
+
+    /* ================= ARTICLE ================= */
+
+    .article-wrapper {
+        margin-top: 30px;
+
+        width: 100%;
+    }
+
+    .article-reading {
+        padding: 32px 21px;
+
+        border-radius: 23px;
+
+        box-shadow:
+                0 12px 40px rgba(0, 0, 0, 0.055);
+    }
+
+    .article-reading::before {
+        display: block;
+
+        top: 30px;
+        bottom: 30px;
+
+        width: 3px;
+    }
+
+
+    /* ================= ARTICLE SECTION ================= */
+
+    .article-section {
+        padding: 0;
+    }
+
+    .section-heading {
+        display: flex;
+
+        align-items: center;
+
+        gap: 11px;
+
+        margin-bottom: 18px;
+    }
+
+    .section-icon {
+        width: 39px;
+        height: 39px;
+
+        border-radius: 12px;
+
+        font-size: 18px;
+
+        flex-shrink: 0;
+    }
+
+    .section-heading h2 {
+        font-size: 1.12rem;
+
+        line-height: 1.7;
+
+        margin: 0;
+    }
+
+
+    /* ================= ARTICLE TEXT ================= */
+
+    .section-text {
+        padding-right: 0;
+    }
+
+    .section-text p {
+        font-size: 0.98rem;
+
+        line-height: 2.25;
+
+        color: #4b5563;
+
+        text-align: justify;
+
+        margin-bottom: 19px;
+
+        word-spacing: -0.2px;
+    }
+
+    /*
+       Drop cap فقط برای پاراگراف اول
+    */
+
+    .section-text p:first-child::first-letter {
+        font-size: 2.3rem;
+
+        line-height: 1;
+
+        padding-left: 5px;
+    }
+
+
+    /* ================= SECTION DIVIDER ================= */
+
+    .section-divider-news {
+        margin: 36px 0;
+
+        gap: 5px;
+    }
+
+    .section-divider-news span {
+        width: 4px;
+        height: 4px;
+    }
+
+    .section-divider-news span:nth-child(2) {
+        width: 7px;
+        height: 7px;
+    }
+
+
+    /* ================= QUOTE ================= */
+
+    .quote-box {
+        margin: 32px 0;
+
+        padding: 35px 24px;
+
+        border-radius: 23px;
+
+        overflow: hidden;
+    }
+
+    .quote-mark {
+        top: -15px;
+        right: 15px;
+
+        font-size: 95px;
+    }
+
+    .quote-box p {
+        font-size: 1.05rem;
+
+        line-height: 2;
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+    /* ================= CONCLUSION ================= */
+
+    .conclusion-box {
+        margin: 32px 0;
+
+        padding: 30px 22px;
+
+        border-radius: 22px;
+    }
+
+    .conclusion-label {
+        font-size: 11px;
+
+        padding: 5px 12px;
+    }
+
+    .conclusion-box h2 {
+        font-size: 1.35rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 13px;
+    }
+
+    .conclusion-box p {
+        font-size: 0.95rem;
+
+        line-height: 2.15;
+
+        text-align: justify;
+    }
+
+
+    /* ================= FEATURED IMAGE ================= */
+
+    .featured-image {
+        width: 100%;
+
+        height: 230px;
+
+        object-fit: cover;
+
+        border-radius: 22px;
+
+        margin-top: 25px;
+
+        box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+@media (max-width: 425px) {
+    .quote-mark{
+        display: none;
+    }
+
+}
+
+@media (max-width: 390px) {
+
+    .container {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .news-hero {
+        min-height: 530px;
+    }
+
+    .news-hero-content {
+        padding-bottom: 38px;
+    }
+
+    .news-hero h1 {
+        font-size: 1.55rem;
+
+        line-height: 1.7;
+    }
+
+    .news-hero p {
+        font-size: 0.88rem;
+
+        line-height: 1.95;
+    }
+
+    .intro-card {
+        padding: 22px 18px 22px 23px;
+    }
+
+    .intro-card p {
+        font-size: 0.92rem;
+    }
+
+    .article-reading {
+        padding: 28px 17px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.02rem;
+    }
+
+    .section-text p {
+        font-size: 0.92rem;
+
+        line-height: 2.15;
+    }
+
+    .stat-card {
+        min-height: 112px;
+
+        padding: 14px 7px;
+    }
+
+    .stat-card span {
+        font-size: 1.05rem;
+    }
+
+    .stat-card p {
+        font-size: 0.7rem;
+    }
+}

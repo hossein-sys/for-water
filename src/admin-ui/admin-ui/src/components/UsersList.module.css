@@ -1,0 +1,151 @@
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--gray);
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.toolbar {
+  margin-bottom: 18px;
+}
+
+.search {
+  width: 100%;
+  max-width: 360px;
+  padding: 11px 16px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--light-bg-2);
+  background: var(--white);
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--dark-text);
+  outline: none;
+  transition: var(--transition);
+}
+
+.search:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(39, 158, 255, 0.15);
+}
+
+.tableWrap {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead th {
+  text-align: right;
+  padding: 16px 20px;
+  background: var(--light-bg);
+  color: var(--gray);
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--light-bg-2);
+}
+
+.table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--light-bg);
+  color: var(--dark-text);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background: var(--light-bg);
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mutedCell {
+  color: var(--gray);
+}
+
+.roleTag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--light-bg-2);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.moreBtn {
+  border: 1px solid var(--light-bg-2);
+  background: var(--white);
+  padding: 7px 16px;
+  border-radius: 9px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.moreBtn:hover {
+  background: var(--primary);
+  color: var(--light-text);
+  border-color: var(--primary);
+}
+
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--gray);
+  white-space: normal;
+}

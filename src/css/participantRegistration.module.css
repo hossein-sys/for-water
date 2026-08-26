@@ -1,0 +1,879 @@
+/* participantRegistration.module.css */
+
+.participantRegistrationWrapper {
+    direction: rtl;
+    position: relative;
+    min-height: 100vh;
+    place-items: center;
+}
+
+@font-face {
+    font-family: "Ordibehesht";
+    src: url("../assets/fonts/Ordibehesht.TTF") format("truetype"),
+    url("../assets/fonts/Ordibehesht.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Vazir";
+    src: url("../assets/fonts/vazirFont/vazirTtf/Vazir.ttf"),
+    url("../assets/fonts/vazirFont/vazirTtf/Vazir-Medium.ttf");
+}
+
+.participantRegistrationWrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Doran', 'Vazir', sans-serif;
+    direction: rtl;
+
+}
+
+.participantRegistrationWrapper body {
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+
+}
+
+.participantRegistrationWrapper label {
+    margin-bottom: 2rem;
+}
+
+.participantRegistrationWrapper .wrapper {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+
+
+}
+
+
+
+.participantRegistrationWrapper .tabs {
+    display: flex;
+    justify-content: center;
+    background: rgba(179, 178, 178, 0.432);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.336);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.514);
+    border-radius: 1rem;
+    gap: 10px;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+}
+
+.participantRegistrationWrapper .tabs button {
+    font-family: 'Doran', 'Vazir', sans-serif;
+    margin: 1rem;
+    border: rgba(255, 255, 255, 0.815) 2px solid;
+    padding: 10px 18px;
+    background: rgba(179, 178, 178, 0.432);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+
+
+
+.participantRegistrationWrapper .tabs button.active {
+    border: rgba(255, 251, 251, 0.856) 2px solid;
+    background: rgba(179, 178, 178, 0.432);
+    color: white;
+    transform: scale(1.2);
+    box-shadow: 0 0.3rem 10px rgba(0, 0, 0, 0.514);
+}
+
+.participantRegistrationWrapper .box {
+    display: flex;
+    height: 620px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.participantRegistrationWrapper .forms {
+    width: 50%;
+    position: relative;
+    perspective: 1200px;
+    background: white;
+}
+
+.participantRegistrationWrapper .form {
+    position: absolute;
+    inset: 0;
+    padding: 35px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: scale(0.98);/*transform: rotateY(90deg) scale(0.85);*/
+    filter: none;/*blur 6px*/
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.participantRegistrationWrapper .form.active {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    filter: none;/*blur 0px*/
+    z-index: 2;
+}
+
+.participantRegistrationWrapper .introducing {
+    margin-bottom: 2rem;
+}
+
+.participantRegistrationWrapper .form h2 {
+    margin-bottom: 20px;
+}
+.participantRegistrationWrapper .form span {
+    font-size: small;
+}
+.participantRegistrationWrapper .form input {
+    margin-top: 0.7rem;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+.participantRegistrationWrapper .form button {
+    padding: 10px 20px;
+    background: #ff416c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.participantRegistrationWrapper .submitButton {
+    padding: 10px 20px;
+    background: #ff416c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.participantRegistrationWrapper .info {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(341deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+}
+
+.participantRegistrationWrapper .info-slide {
+    position: absolute;
+    inset: 0;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.participantRegistrationWrapper .info-slide.active {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 2;
+}
+.participantRegistrationWrapper .info-slide.exit-up {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.participantRegistrationWrapper .info-slide.exit-down {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.participantRegistrationWrapper .info h2 {
+    margin-bottom: 20px;
+}
+
+.participantRegistrationWrapper input[type="number"]::-webkit-outer-spin-button,
+.participantRegistrationWrapper input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.participantRegistrationWrapper input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.participantRegistrationWrapper input:focus {
+    outline: none;
+    border-color: #ff416c;
+    box-shadow: 0 0 0 3px rgba(255, 65, 108, 0.2);
+    transition: 0.3s;
+}
+.participantRegistrationWrapper input,
+.participantRegistrationWrapper select,
+.participantRegistrationWrapper textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    transition: 0.3s;
+    font-size: 14px;
+}
+.participantRegistrationWrapper .submitButton{
+    width: 50% !important;
+}
+.participantRegistrationWrapper .submitButton:disabled{
+    opacity:0.6;
+    cursor:not-allowed;
+}
+.participantRegistrationWrapper .submitDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.participantRegistrationWrapper input:hover {
+    background: #fff;
+}
+.participantRegistrationWrapper .submitButton:hover {
+    background: #1a3c5e;
+}
+
+.participantRegistrationWrapper .file-upload {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #ff416c;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.participantRegistrationWrapper .file-upload input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.participantRegistrationWrapper .password-wrapper {
+    position: relative;
+}
+.participantRegistrationWrapper .password-wrapper button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.participantRegistrationWrapper input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.participantRegistrationWrapper .idea-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;/*transition: all 0.5s ease;*/
+}
+.participantRegistrationWrapper .idea-section.active {
+    max-height: 1100px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 20px;
+}
+
+.participantRegistrationWrapper .file-preview {
+    margin-top: 10px;
+}
+.participantRegistrationWrapper .file-box {
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.participantRegistrationWrapper .file-box button {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.participantRegistrationWrapper .file-box button:hover {
+    background: darkred;
+}
+.participantRegistrationWrapper .link{
+    font-family: 'Doran', 'Vazir', sans-serif;
+    margin: 1rem;
+    border: rgba(255, 255, 255, 0.815) 2px solid;
+    padding: 10px 18px;
+    background: rgb(42, 92, 151);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.participantRegistrationWrapper .link:visited{
+    color: white;
+}
+
+/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+/* =========================
+   LAPTOP / TABLET
+========================= */
+
+.participantRegistrationWrapper .customCheckbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.participantRegistrationWrapper .customCheckbox + span {
+
+    position: relative;
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #ffffff;
+    border: 2px solid #4b5563;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+
+.participantRegistrationWrapper .customCheckbox:checked + span {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+
+.participantRegistrationWrapper .customCheckbox:checked + span::after {
+    width: 0.35rem;
+    height: 0.7rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+.participantRegistrationWrapper .customCheckbox:hover + span {
+    border-color: #3b82f6;
+}
+
+.participantRegistrationWrapper .customCheckbox:focus + span {
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+    outline: none;
+}
+
+.participantRegistrationWrapper .labelCheckbox {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    user-select: none;
+    place-content: start;
+}
+/*========================================================================================================================*/
+.participantRegistrationWrapper .downloadBox h4 {
+    margin-bottom: 0.5rem;
+}
+.participantRegistrationWrapper .downloadBox p {
+    margin-bottom: 0.5rem;
+}
+
+.participantRegistrationWrapper .uploadContainer {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9eef3;
+}
+
+.participantRegistrationWrapper .uploadTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: #1e293b;
+}
+
+.participantRegistrationWrapper .uploadHint {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.participantRegistrationWrapper .dropzone {
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.participantRegistrationWrapper .dropzone:hover {
+    border-color: #3b82f6;
+    background-color: #f1f5f9;
+}
+
+.participantRegistrationWrapper .hiddenInput {
+    display: none;
+}
+
+.participantRegistrationWrapper .dropzoneContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.participantRegistrationWrapper .uploadIcon {
+    font-size: 2rem;
+}
+
+.participantRegistrationWrapper .selectBtn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.participantRegistrationWrapper .selectBtn:hover {
+    background-color: #2563eb;
+}
+
+/* کارت فایل انتخاب شده (همون chosen file) */
+.participantRegistrationWrapper .chosenFileCard {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f1f5f9;
+    border-radius: 14px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+
+.participantRegistrationWrapper .fileIcon {
+    font-size: 1.8rem;
+}
+
+.participantRegistrationWrapper .fileInfo {
+    flex: 1;
+    overflow: hidden;
+}
+
+.participantRegistrationWrapper .fileName {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.participantRegistrationWrapper .fileSize {
+    font-size: 0.7rem;
+    color: #475569;
+}
+
+.participantRegistrationWrapper .removeFileBtn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 0 0.25rem;
+    transition: color 0.2s;
+}
+
+.participantRegistrationWrapper .removeFileBtn:hover {
+    color: #ef4444;
+}
+/*========================================================================================================================*/
+
+@media (max-width: 1100px) {
+    .participantRegistrationWrapper .downloadBox button {
+        width: 70%;
+    }
+
+    .participantRegistrationWrapper .wrapper {
+
+        width: 95%;
+
+        position: relative;
+
+        right: auto;
+        top: auto;
+
+        margin: 2rem auto;
+    }
+
+    .participantRegistrationWrapper .box {
+
+        height: 650px;
+    }
+
+
+
+    .participantRegistrationWrapper .form {
+
+        filter: none;
+    }
+
+    .participantRegistrationWrapper .form.active {
+
+        transform: scale(1);
+    }
+
+    .participantRegistrationWrapper .form:not(.active) {
+
+        transform: scale(0.96);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .participantRegistrationWrapper .downloadBox button {
+        width: 40% !important;
+    }
+
+    .participantRegistrationWrapper {
+        padding: 1rem;
+        background-attachment: scroll;
+    }
+
+    .participantRegistrationWrapper .wrapper {
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        position: relative;
+
+        right: auto;
+
+        top: auto;
+    }
+
+    /* =========================
+       TABS
+    ========================= */
+
+    .participantRegistrationWrapper .tabs {
+
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        gap: 0.5rem;
+
+        padding: 0.7rem;
+
+        margin: 0 0 1rem;
+
+        scrollbar-width: none;
+    }
+
+
+    .participantRegistrationWrapper .tabs::-webkit-scrollbar {
+
+        display: none;
+    }
+
+    .participantRegistrationWrapper .tabs button {
+
+        flex-shrink: 0;
+
+        margin: 0;
+
+        padding: 0.7rem 1rem;
+
+        font-size: 13px;
+    }
+    .participantRegistrationWrapper .link{
+        flex-shrink: 0;
+
+        margin: 0;
+
+        padding: 0.7rem 1rem;
+
+        font-size: 13px;
+    }
+
+    .participantRegistrationWrapper .tabs button.active {
+
+        transform: scale(1);
+    }
+
+    /* =========================
+       BOX
+    ========================= */
+
+    .participantRegistrationWrapper .box {
+
+        display: flex;
+
+        flex-direction: column-reverse;
+
+        height: auto;
+
+        overflow: hidden;
+    }
+
+    /* =========================
+       INFO
+    ========================= */
+
+    .participantRegistrationWrapper .info {
+
+        width: 100%;
+
+        min-height: 180px;
+    }
+
+    .participantRegistrationWrapper .info-slide {
+
+        position: relative;
+
+        inset: unset;
+
+        display: none;
+
+        opacity: 1;
+
+        transform: none !important;
+
+        padding: 2rem 1.5rem;
+    }
+
+    .participantRegistrationWrapper .info-slide.active {
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    .participantRegistrationWrapper .info-slide.exit-up,
+    .participantRegistrationWrapper .info-slide.exit-down {
+
+        display: none;
+    }
+
+    .participantRegistrationWrapper .info h2 {
+
+        font-size: 1.4rem;
+
+        margin-bottom: 1rem;
+    }
+
+    .participantRegistrationWrapper .info p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    /* =========================
+       FORMS
+    ========================= */
+
+    .participantRegistrationWrapper .forms {
+
+        width: 100%;
+
+        perspective: none;
+
+        min-height: auto;
+    }
+
+    .participantRegistrationWrapper .form {
+
+        position: relative;
+
+        inset: unset;
+
+        display: none;
+
+        opacity: 1;
+
+        transform: none !important;
+
+        filter: none !important;
+
+        overflow: visible;
+
+        padding: 1.5rem;
+    }
+
+    .participantRegistrationWrapper .form.active {
+
+        display: block;
+    }
+
+    /* =========================
+       TYPOGRAPHY
+    ========================= */
+
+    .participantRegistrationWrapper .form h2 {
+
+        font-size: 1.5rem;
+    }
+
+    .participantRegistrationWrapper .introducing span {
+
+        line-height: 1.9;
+
+        font-size: 12px;
+    }
+
+    /* =========================
+       INPUTS
+    ========================= */
+
+    .participantRegistrationWrapper label {
+
+        display: block;
+
+        margin-bottom: 1rem;
+    }
+
+    .participantRegistrationWrapper input,
+    .participantRegistrationWrapper textarea,
+    .participantRegistrationWrapper select {
+
+        font-size: 14px;
+
+        padding: 12px;
+    }
+
+    .participantRegistrationWrapper .form button {
+
+        width: 30%;
+    }
+
+    /* =========================
+       FILES
+    ========================= */
+
+    .participantRegistrationWrapper .file-upload {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0.7rem;
+
+        text-align: center;
+    }
+
+    .participantRegistrationWrapper .file-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0.7rem;
+    }
+
+    .participantRegistrationWrapper .file-box button {
+
+        width: 100%;
+    }
+
+    /* =========================
+       IDEA SECTION
+    ========================= */
+
+    .participantRegistrationWrapper .idea-section.active {
+
+        max-height: 5000px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+    .participantRegistrationWrapper .downloadBox button {
+        width: 70% !important;
+    }
+
+    .participantRegistrationWrapper {
+
+        padding: 0.7rem;
+    }
+
+    .participantRegistrationWrapper .form {
+        padding: 1rem;
+    }
+    .participantRegistrationWrapper .form button {
+        width: 70%;
+    }
+
+    .participantRegistrationWrapper .tabs button {
+
+        font-size: 12px;
+
+        padding: 0.6rem 0.9rem;
+    }
+    .participantRegistrationWrapper .link{
+        font-size: 12px;
+
+        padding: 0.6rem 0.9rem;
+    }
+
+    .participantRegistrationWrapper .form h2,
+    .participantRegistrationWrapper .info h2 {
+
+        font-size: 1.2rem;
+    }
+
+    .participantRegistrationWrapper .info p {
+
+        font-size: 13px;
+    }
+
+    .participantRegistrationWrapper input,
+    .participantRegistrationWrapper textarea,
+    .participantRegistrationWrapper select {
+
+        font-size: 13px;
+    }
+}

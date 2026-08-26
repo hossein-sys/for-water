@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* --- پالت اصلی (آبی/نفتی) --- */
+  --primary: #279eff;
+  --secondary: #2700ff;
+  --accent: #3b9797;
+  --danger: #660000;
+  --danger-soft: #bd0202;
+
+  --light-bg: #f0f8ff;
+  --light-bg-2: #e6f2ff;
+  --gray: #5d6d7e;
+  --dark-text: #090979;
+  --light-text: #ffffff;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --shadow: 0 10px 30px rgba(39, 158, 255, 0.15);
+  --shadow-heavy: 0 20px 50px rgba(39, 158, 255, 0.2);
+
+  --border-radius: 20px;
+  --border-radius-sm: 12px;
+
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+  --gradient-accent: linear-gradient(135deg, var(--danger), var(--danger-soft));
+
+  --font-main: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--light-bg);
+  color: var(--dark-text);
+  direction: rtl;
+}

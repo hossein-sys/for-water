@@ -1,0 +1,184 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: var(--light-bg);
+}
+
+/* ---------- سایدبار ---------- */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--white);
+  border-inline-start: 1px solid var(--light-bg-2);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px 24px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--light-bg-2);
+}
+
+.logoMark {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--border-radius-sm);
+  background: var(--gradient-primary);
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--dark-text);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  border-radius: var(--border-radius-sm);
+  color: var(--gray);
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: right;
+  transition: var(--transition);
+}
+
+.navItem:hover {
+  background: var(--light-bg-2);
+  color: var(--primary);
+}
+
+.navItemActive {
+  background: var(--gradient-primary);
+  color: var(--light-text);
+  box-shadow: var(--shadow);
+}
+
+.navItemActive:hover {
+  background: var(--gradient-primary);
+  color: var(--light-text);
+}
+
+.sidebarFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1px solid var(--light-bg-2);
+  margin-top: 12px;
+}
+
+.adminAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--light-bg-2);
+  color: var(--dark-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.adminName {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.adminRole {
+  font-size: 11px;
+  color: var(--gray);
+}
+
+/* ---------- محتوا ---------- */
+.content {
+  flex: 1;
+  padding: 32px 40px;
+  max-width: 1200px;
+}
+/*----------دکمه برگشت--------*/
+.backButton {
+  text-decoration: none ;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  background: rgba(39, 158, 255, 0.12);
+  color: var(--primary);
+}
+.backButton:hover {
+  background: var(--primary);
+  color: var(--light-text);
+}
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 14px 16px;
+  }
+  .logo {
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+  }
+  .logoText {
+    display: none;
+  }
+  .nav {
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+  }
+  .navItem span:last-child {
+    display: none;
+  }
+  .sidebarFooter {
+    border-top: none;
+    padding: 0;
+    margin: 0;
+  }
+  .adminName,
+  .adminRole {
+    display: none;
+  }
+  .content {
+    padding: 20px;
+  }
+}

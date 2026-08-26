@@ -66,6 +66,12 @@ html {
             url("../assets/fonts/vazirFont/vazirTtf/Vazir.ttf"),
             url("../assets/fonts/vazirFont/vazirTtf/Vazir-Medium.ttf");
 }
+@font-face {
+    font-family: "Doran";
+    src:
+            url("../assets/fonts/vazirFont/vazirTtf/Vazir.ttf"),
+            url("../assets/fonts/vazirFont/vazirTtf/Vazir-Medium.ttf");
+}
 
 body {
     font-family: "Doran", "Vazir", sans-serif;
@@ -86,6 +92,7 @@ body {
 
 .text-danger{
     color:var(--google-color);
+    margin: 0!important;
 }
 
 .container {
@@ -106,7 +113,11 @@ body {
     height:100%;
     object-fit:cover;
 }
-
+.label-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 .header-bg-video video{
     position:absolute;
     inset:0;
@@ -114,7 +125,14 @@ body {
     height:100%;
     object-fit:cover;
 }
-
+.user-account-validation {
+    margin:0.3rem;
+    display: flex;
+    justify-content: start;
+}
+.user-account-validation p{
+    font-size: 0.8rem !important;
+}
 .section-divider {
     position: relative;
     height: clamp(100px, 18vw, 280px);
@@ -1912,7 +1930,7 @@ body {
 
 .target-tag {
     background: rgba(39, 158, 255, 0.1);
-    width: 40%;
+    width: 45%;
     display: flex;
     justify-content: center;
     color: var(--primary);
@@ -2625,6 +2643,10 @@ body {
     transform: translateY(-4px);
 }
 
+.my-toast {
+    font-family:"Doran","Vazirmatn", sans-serif!important;
+}
+
 /* ============================= */
 /* Small Desktop - 1440px */
 /* ============================= */
@@ -2724,6 +2746,12 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
+    .problems-content , .registration-info ,.topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+
 }
 
 @media (max-width: 992px) {
@@ -2840,7 +2868,12 @@ body {
 }
 
 @media (max-width: 768px) {
-
+    .problems-content , .registration-info ,.topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ip-info{
+        width: 100%;
+    }
 
     #Audience{
         padding: 1rem !important;
@@ -2881,6 +2914,7 @@ body {
 
     .registration-cta {
         padding: 40px 25px;
+        width: 100%;
     }
 
     .cta-content h3 {
@@ -2904,11 +2938,16 @@ body {
         width: calc(100% - 40px);
         left: 20px;
     }
+    .footer-social{
+        justify-content: center;
+    }
 }
 
 
 @media(max-width:600px){
-
+    .my-toast {
+        font-size: 13px;
+    }
     .section-divider{
         height: 100px;
         margin-top: -40px;
@@ -3064,6 +3103,9 @@ body {
 }
 
 @media (max-width: 425px) {
+    .problems-content , .registration-info ,.topics-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
     .section-divider {
         object-fit: contain;
         height: 5rem;
@@ -3079,7 +3121,12 @@ body {
     #Audience {
         padding: 1rem 0rem !important;
     }
-
+    .faq-question h3{
+        font-size: 1rem;
+    }
+    .ip-info p{
+        text-align: justify !important;
+    }
 }
 /* ============================= */
 /* Small Mobile - 320px */
@@ -3116,16 +3163,17 @@ body {
     }
 
     .tagline-text{
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .header-description{
+        text-align: justify;
         font-size: .85rem;
         line-height: 1.8;
     }
 
     .intro-btn,
-    .outline-btn{
+    .outline-btn ,.cta-btn-secondary{
         max-width: 100%;
         padding: 12px;
         font-size: .9rem;
