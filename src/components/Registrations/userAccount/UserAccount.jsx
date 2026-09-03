@@ -3,7 +3,7 @@ import "../../../css/userAccount.css";
 import {contactContext} from "../../../contex/Context";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
-import {authSignUp, checkEmailAPI, LoginPassword,userInfo} from "../../../api/AuthenticationServices";
+import {authSignUp, checkEmailAPI, LoginPassword} from "../../../api/AuthenticationServices";
 import {useNavigate} from "react-router-dom";
 import {Slide, toast} from "react-toastify";
 import {
@@ -40,45 +40,72 @@ const UserAccount = () => {
 
 
 
-    const createUserSubmit = async (event)=>{
+    const createUserSubmit = async (event) => {
         event.preventDefault();
-       try {
-           setLoading(true);
-           await UserAccountSignUpSchema.validate(userSignUp , {abortEarly: false});
-         const {status } = await authSignUp(userSignUp);
-         if(status === 200){
-             toast.success('ثبت نام با موفقیت انجام شد!', {
-                 position: "top-right",
-                 autoClose: 4000,
-                 hideProgressBar: false,
-                 closeOnClick: false,
-                 pauseOnHover: true,
-                 draggable: true,
-                 progress: undefined,
-                 theme: "dark",
-                 transition: Slide,
-             });
-             // const {status} = await (userSignUp);
-             setUserSignUp({})
-             navigate("/")
-             setLoading(false);
-         }
-       }catch(err){
-           toast.error('ثبت نام ناموفق بود! ', {
-               position: "top-right",
-               autoClose: 4000,
-               hideProgressBar: false,
-               closeOnClick: false,
-               pauseOnHover: true,
-               draggable: true,
-               progress: undefined,
-               theme: "dark",
-               transition: Slide,
-           });
-           setCreateUserSubmitError(err.inner || [])
-           setLoading(false);
-       }
-    }
+
+        try {
+            setLoading(true);
+
+            await UserAccountSignUpSchema.validate(userSignUp, {
+                abortEarly: false
+            });
+            console.log("User sign up :" , userSignUp)
+            const { status } = await authSignUp(userSignUp);
+            if (status === 200) {
+                const emailData = {
+                    email: userSignUp.email,
+                    loginBySms: false,
+                    forget_password: false
+                };
+                const { status: emailStatus } = await checkEmailAPI(emailData);
+                if (emailStatus === 200) {
+                    const loginData = {
+                        email: userSignUp.email,
+                        password: userSignUp.password
+                    };
+                    const { status: loginStatus, data } = await LoginPassword(loginData);
+                    if (loginStatus === 200) {
+                        localStorage.setItem(
+                            "token",
+                            data.data.token
+                        );
+                        setUserLogIn({});
+                        setCheckEmail({});
+                        setLoginForm(false);
+                        setUserSignUp({});
+                        setForceRender(!forceRender);
+                        navigate("/");
+                    }
+                }else{
+                    toast.error("حساب با موفقیت ساخته شد.ورود کنید!", {
+                        position: "top-right",
+                        autoClose: 4000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "dark",
+                        transition: Slide,
+                    });
+                }
+            }
+            setLoading(false);
+        } catch (err) {
+            toast.error("ثبت نام ناموفق بود!", {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                transition: Slide,
+            });
+
+            setCreateUserSubmitError(err.inner || []);
+            setLoading(false);
+        }
+    };
 
     const checkLoginEmail = async (event)=>{
         event.preventDefault();
