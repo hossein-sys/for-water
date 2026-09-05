@@ -39,3 +39,23 @@ export const entourageRegistrationValidationSchema = YUP.object().shape({
             "شناسه فایل نامعتبر است"
         )
 })
+
+export const FileSchema = YUP.object({
+    idea_file: YUP
+        .mixed()
+        .required("لطفاً فایل ایده را انتخاب کنید.")
+        .test(
+            "fileType",
+            "فقط فایل PDF مجاز است.",
+            (file) =>
+                file instanceof File &&
+                file.type === "application/pdf"
+        )
+        .test(
+            "fileSize",
+            "حجم فایل نباید بیشتر از 5 مگابایت باشد.",
+            (file) =>
+                file instanceof File &&
+                file.size <= 5 * 1024 * 1024
+        )
+});

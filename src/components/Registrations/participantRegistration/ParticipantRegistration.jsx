@@ -7,8 +7,8 @@ import {contactContext} from "../../../contex/Context";
 import {participantSignIn, mentorsSignIn, entouragesSignIn, uploadFile} from "../../../api/ParticipantsServices";
 import {Spinner} from "../../index";
 import {
-    entourageRegistrationValidationSchema,
-    mentorRegistrationValidationSchema,
+    entourageRegistrationValidationSchema, FileSchema,
+    mentorRegistrationValidationSchema, participantFileSchema,
     participantRegistrationValidationSchema
 } from "../../../validations/RegistrationValidation";
 import showError from "../../../helpers/ShowError";
@@ -23,7 +23,6 @@ const ParticipantRegistration = ({userRegisterData}) => {
     const [participantError, setParticipantError] = useState([]);
     const [mentorError, setMentorError] = useState([]);
     const [entourageError, setEntourageError] = useState([]);
-
 
     const [participants, setParticipants] = useState({
         first_name: "",
@@ -50,9 +49,12 @@ const ParticipantRegistration = ({userRegisterData}) => {
     const createParticipant =async (event, type, data)=>{
         event.preventDefault();
         try {
-            console.log("type" , type);
             setLoading(true);
             if (type === "participantRegistration") {
+                await FileSchema.validate(
+                    { idea_file: data.idea_file },
+                    { abortEarly: false }
+                );
                 const {status:uploadStatus , data:uploadData} = await uploadFile(data.idea_file, "profile_image")
                 if (uploadStatus ===200) {
                     const participantData = {
@@ -81,7 +83,10 @@ const ParticipantRegistration = ({userRegisterData}) => {
                 }
             }
             if (type === "mentorsSignIn") {
-                    console.log("mentors:" , mentors)
+                await FileSchema.validate(
+                    { idea_file: data.idea_file },
+                    { abortEarly: false }
+                );
                 const {status:uploadStatus , data:uploadData} = await uploadFile(data.idea_file, "profile_image")
                 if (uploadStatus ===200){
                     const mentorsData = {
@@ -109,6 +114,10 @@ const ParticipantRegistration = ({userRegisterData}) => {
                 }
             }
             if (type === "entouragesSignIn") {
+                await FileSchema.validate(
+                    { idea_file: data.idea_file },
+                    { abortEarly: false }
+                );
                 const {status:uploadStatus , data:uploadData} = await uploadFile(data.idea_file, "profile_image")
                 if (uploadStatus ===200){
                     const entourageData = {
@@ -258,7 +267,10 @@ const ParticipantRegistration = ({userRegisterData}) => {
                                         <div className={`${styles.ideaSection} ${showIdeaSection ? styles.active : ''}`}>
 
                                             <DownloadBox formId={activeTab} />
-                                            {showError(participantError,"idea_file")}
+                                            <div style={{marginTop: "1rem"}}>
+                                                {showError(participantError,"idea_file")}
+                                            </div>
+
                                             <UploadBox setFile={(file)=>{
                                                 setParticipants(
                                                     {
@@ -304,7 +316,9 @@ const ParticipantRegistration = ({userRegisterData}) => {
                                         </label>
 
                                         <DownloadBox formId={activeTab}  />
+                                            <div style={{marginTop: "1rem"}}>
                                         {showError(mentorError,"idea_file")}
+                                            </div>
                                         <UploadBox setFile={(file)=>{
                                             setMentors(
                                                 {
@@ -326,7 +340,9 @@ const ParticipantRegistration = ({userRegisterData}) => {
                                     <form className={`${styles.form} ${styles.active}`} onSubmit={(event)=>createParticipant(event,"entouragesSignIn",entourages)}>
 
                                         <DownloadBox formId={activeTab} />
+                                        <div style={{marginTop: "1rem"}}>
                                         {showError(entourageError,"idea_file")}
+                                        </div>
                                         <UploadBox setFile={(file)=>{
                                             setEntourage(
                                                 {

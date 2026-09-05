@@ -77,7 +77,7 @@ const Header = ({isUser , setIsUser}) => {
                                 <i className="fas fa-download"></i>
                                 دانلود کتابچه
                             </a>
-                            <a href="/mf/قوانین%20مالکیت%20فکری.docx" className="cta-btn-secondary" download>
+                            <a href="/mf/قوانین%20مالکیت%20فکری.docx" className="outline-btn" download>
                                 <i className="fas fa-file-contract"></i>
                                 قوانین مالکیت فکری
                             </a>

@@ -109,9 +109,9 @@ const Footer = () =>{
                         <p>
                             طراحی و توسعه توسط محمد حسین عاشوری
                         </p>
-                        <div className="footer-social">
-                            <a href="https://t.me/ghostdrawing" aria-label="تلگرام"><i className="fab fa-telegram"></i></a>
-                        </div>
+                        {/*<div className="footer-social">*/}
+                        {/*    <a href="https://t.me/ghostdrawing" aria-label="تلگرام"><i className="fab fa-telegram"></i></a>*/}
+                        {/*</div>*/}
                     </div>
 
                 </div>

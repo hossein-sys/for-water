@@ -30,7 +30,7 @@ const UploadBox = ({setFile}) => {
     return (
         <div className={styles.uploadContainer}>
             <h4 className={styles.uploadTitle}>📎 آپلود فایل ایده شما</h4>
-            <p className={styles.uploadHint}>فرمت‌های مجاز: webp, jpeg, png, jpg, gif, pdf, zip, m4a, mp4, mp3, wav. (حداکثر ۵ مگابایت)</p>
+            <p className={styles.uploadHint}>فرمت‌های مجاز: pdf. (حداکثر 2 مگابایت)</p>
 
             <div className={styles.dropzone} onClick={() => inputRef.current?.click()}>
                 <input

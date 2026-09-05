@@ -3,8 +3,12 @@
 .participantRegistrationWrapper {
     direction: rtl;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
-    place-items: center;
+    overflow-x: hidden !important;
 }
 
 @font-face {
@@ -27,23 +31,24 @@
 
 }
 
-.participantRegistrationWrapper body {
-    display: flex;
-    justify-content: center;
-    padding: 40px 15px;
-
+:global(html),
+:global(body) {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .participantRegistrationWrapper label {
     margin-bottom: 2rem;
 }
 
+
+
 .participantRegistrationWrapper .wrapper {
     width: min(1000px, 100%);
-    align-items: center;
-    top: 0;
-    inset-inline-start: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
 }
 
 
@@ -519,14 +524,6 @@
     }
 
     .participantRegistrationWrapper .wrapper {
-
-        width: 95%;
-
-        position: relative;
-
-        right: auto;
-        top: auto;
-
         margin: 2rem auto;
     }
 
