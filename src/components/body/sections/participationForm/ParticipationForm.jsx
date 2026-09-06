@@ -404,7 +404,7 @@ const ParticipationForm = () => {
                         </h3>
 
                         <p>
-                            مهلت ثبت ایده تا ۱۵ اردیبهشت ۱۴۰۴
+                            مهلت ثبت ایده تا ۱ آبان ۱۴۰۵
                         </p>
 
                         <span className="cta-description">

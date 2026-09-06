@@ -4,11 +4,11 @@ const roadmapData = [
     {
         number: "۱",
         phase: "فاز اول",
-        title: "فراخوان و ثبت ایده",
+        title: "آخرین مهلت ثبت نام و ثبت ایده",
         description:
             "آغاز ثبت‌نام آنلاین و ارسال ایده‌ها در محورهای چهارگانه",
         output: "لیست ایده‌ها و تیم‌های اولیه",
-        duration: "۱ فروردین - ۱۵ اردیبهشت ۱۴۰۴",
+        duration: "۱ آبان",
         icon: "fa-lightbulb",
     },
     {
@@ -18,7 +18,7 @@ const roadmapData = [
         description:
             "ارزیابی ایده‌ها توسط هیئت داوران و انتخاب ایده‌های منتخب",
         output: "تیم‌های منتخب برای مرحله بعد",
-        duration: "۱۶ - ۳۰ اردیبهشت",
+        duration: "۱۵ - ۲۹ آبان",
         icon: "fa-filter",
     },
     {
@@ -28,7 +28,7 @@ const roadmapData = [
         description:
             "کارگاه‌های تخصصی در حوزه کسب‌وکار، فنی و مدیریت پروژه",
         output: "طرح MVP اولیه",
-        duration: "۱ - ۱۵ خرداد",
+        duration: "۳ - ۱۷ آذر",
         icon: "fa-graduation-cap",
     },
     {
@@ -38,7 +38,7 @@ const roadmapData = [
         description:
             "طراحی و توسعه نمونه اولیه تحت نظارت منتورهای تخصصی",
         output: "MVP عملیاتی اولیه",
-        duration: "۱۶ خرداد - ۱۵ تیر",
+        duration: "۱۸ آذر - ۱۷ دی",
         icon: "fa-rocket",
     },
     {
@@ -48,7 +48,7 @@ const roadmapData = [
         description:
             "ارائه نهایی طرح‌ها به داوران و سرمایه‌گذاران",
         output: "ارائه نهایی و ارزیابی",
-        duration: "۲۰ تیر",
+        duration: "۲۳ دی",
         icon: "fa-font-awesome",
     },
     {
@@ -59,7 +59,7 @@ const roadmapData = [
             "ورود تیم‌های منتخب به فرآیند توسعه مرکز ملی نوآوری آب",
         output:
             "توافق‌نامه‌ها و ورود تیم‌ها به فرآیند توسعه مرکز ملی نوآوری آب",
-        duration: "مرداد - شهریور",
+        duration: "بهمن - اسفند",
         icon: "fa-link",
     },
 ];

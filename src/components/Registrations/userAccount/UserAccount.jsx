@@ -49,7 +49,7 @@ const UserAccount = () => {
             await UserAccountSignUpSchema.validate(userSignUp, {
                 abortEarly: false
             });
-            console.log("User sign up :" , userSignUp)
+
             const { status } = await authSignUp(userSignUp);
             if (status === 200) {
                 const emailData = {
@@ -111,7 +111,6 @@ const UserAccount = () => {
         event.preventDefault();
         try {
             setLoading(true);
-            console.log(checkEmail);
             await UserAccountLogInCheckEmailSchema.validate(checkEmail , {abortEarly: false});
             const {status} = await checkEmailAPI(checkEmail);
 

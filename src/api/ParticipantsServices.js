@@ -55,10 +55,6 @@ export const uploadFile = (file,type) => {
     const fileData = new FormData()
     fileData.append(`file`, file);
     fileData.append(`type`,type);
-    for (let item of fileData.entries()){
-        console.log(item);
-    }
-
     return api.post(url, fileData);
 }
 

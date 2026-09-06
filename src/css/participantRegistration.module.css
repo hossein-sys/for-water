@@ -509,12 +509,13 @@
     font-size: 1.2rem;
     cursor: pointer;
     color: #94a3b8;
-    padding: 0 0.25rem;
+    padding: 0.2rem 0.7rem !important;
     transition: color 0.2s;
 }
 
 .participantRegistrationWrapper .removeFileBtn:hover {
-    color: #ef4444;
+    background:var(--primary) ;
+    color: #ffffff;
 }
 /*========================================================================================================================*/
 

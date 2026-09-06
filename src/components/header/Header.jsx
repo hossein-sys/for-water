@@ -5,7 +5,7 @@ import {useContext, useEffect, useState} from "react";
 
 
 const Header = ({isUser , setIsUser}) => {
-    const {navLinksColor, setIsHeaderVideoLoaded,logoColor , stickyNavbarSize} = useContext(contactContext);
+    const {navLinksColor,logoColor , stickyNavbarSize} = useContext(contactContext);
     const [showVideo, setShowVideo] = useState(false);
     useEffect(() => {
         const handleLoad = () => {

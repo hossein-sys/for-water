@@ -3,7 +3,7 @@
 :root {
   /* --- پالت اصلی (آبی/نفتی) --- */
   --primary: #279eff;
-  --secondary: #2700ff;
+  --secondary: #000000;
   --accent: #3b9797;
   --danger: #660000;
   --danger-soft: #bd0202;

@@ -557,7 +557,8 @@
 
     gap: 25px;
 
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
 }
 
 
@@ -861,7 +862,7 @@
 
     max-width: 620px;
 
-    color: var(--secondary);
+    color: #190303;
 
     font-size: clamp(1.7rem, 2.6vw, 2.35rem);
 
@@ -926,7 +927,7 @@
 
 
 .news-editorial-link:hover .news-read-button {
-    transform: translateX(-4px);
+    transform: translateX(-1rem);
 
     box-shadow:
             0 11px 26px rgba(102, 0, 0, 0.25);

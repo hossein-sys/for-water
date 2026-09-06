@@ -1,15 +1,14 @@
 import {useContext, useEffect, useMemo, useState} from "react";
 import styles from "./RegistrationsList.module.css";
-import StatusBadge from "./StatusBadge";
+
 import StatCard from "./StatCard";
-import {deleteRegister, downLoadFile, getAllRegisters} from "../../../../api/ParticipantsServices";
-import {userAllInfo} from "../../../../api/AuthenticationServices";
+import { downLoadFile, getAllRegisters} from "../../../../api/ParticipantsServices";
+
 import {contactContext} from "../../../../contex/Context";
-import { confirmAlert } from 'react-confirm-alert'; // Import
+
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {Spinner} from "../../../../components";
-import {toast} from "react-toastify"; // Import css
-// import { registrations } from "../data/mockData";
+
 
 const RegistrationsList =({confirmDelete})=> {
 

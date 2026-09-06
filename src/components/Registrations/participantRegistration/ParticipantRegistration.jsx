@@ -1,14 +1,14 @@
-import { useState, useRef, useEffect, useContext } from 'react';
+import { useState,useContext } from 'react';
 import styles from '../../../css/participantRegistration.module.css';
 import {Link , useNavigate} from "react-router-dom";
 import UploadBox from "../../fileBox/UploadBox";
 import DownloadBox from "../../fileBox/DownloadBox";
 import {contactContext} from "../../../contex/Context";
 import {participantSignIn, mentorsSignIn, entouragesSignIn, uploadFile} from "../../../api/ParticipantsServices";
-import {Spinner} from "../../index";
+
 import {
     entourageRegistrationValidationSchema, FileSchema,
-    mentorRegistrationValidationSchema, participantFileSchema,
+    mentorRegistrationValidationSchema,
     participantRegistrationValidationSchema
 } from "../../../validations/RegistrationValidation";
 import showError from "../../../helpers/ShowError";
@@ -63,7 +63,6 @@ const ParticipantRegistration = ({userRegisterData}) => {
                     }
                     await participantRegistrationValidationSchema.validate(participantData , {abortEarly: false});
                     const {status, data:responsData} = await participantSignIn(participantData)
-                    console.log("participant data :",responsData)
                     if(status === 200){
                         toast.success('ثبت نام با موفقیت انجام شد!', {
                             position: "top-right",
